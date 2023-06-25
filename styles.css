@@ -8,7 +8,7 @@
 
 html, body {
   height: 100%;
-  background:linear-gradient(89deg, rgba(230, 230, 222, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  background: #FBEEE7;
   margin: 0;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 header {
-  background-color: #56406e;
+  background-color: #49274A;
   color: #dbd8cc;
   text-align: center;
   padding: 1rem 0;
@@ -84,11 +84,12 @@ main {
   align-items: center;
   margin: auto;
   flex-grow: 1;
+  height: 70%;
 }
 
 .left {
   width: 50%;
-  margin-right: 15em;
+  margin: auto;
 }
 
 .right {
@@ -98,7 +99,7 @@ main {
 .banner {
   font-family: 'Patrick Hand', cursive;
   text-align: center;
-  background-color: #56406e;
+  background-color: #49274A;
   color: #dbd8cc;
   border-radius: 20px;
   padding: 2em;
@@ -136,7 +137,7 @@ main {
     display: flex;
     flex-direction: column;
     flex-grow: 0;
-    margin-left: 1em;
+    margin: auto;
     align-items: unset;
   }
   .banner {
@@ -150,11 +151,12 @@ main {
     margin-left: -6em;
     max-width: 300px;
     height: auto;
+    margin: auto;
   }
 }
 
 footer {
-  background-color: #56406e;
+  background-color: #49274A;
   color: #dbd8cc;
   text-align: center;
   padding: 2rem 0;
@@ -195,6 +197,7 @@ footer a:hover {
 .text-container {
   flex: 2 1 600px;
   margin-left: 2rem;
+  
 }
 
 .image-container__img {
