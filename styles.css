@@ -4,19 +4,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Patrick Hand', cursive;
 }
 
 html, body {
-  height: 100%;
+  width: 100%;
   background: #FBEEE7;
-  margin: 0;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  font-family: Arial, sans-serif;
   line-height: 1.6;
+  justify-content: space-between;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
 }
 
 header {
@@ -78,32 +86,27 @@ p, li {
   background-color: #555;
 }
 
-main {
+.presentation { 
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: auto;
-  flex-grow: 1;
-  height: 70%;
+  gap: 2rem;
 }
 
 .left {
-  width: 50%;
   margin: auto;
 }
 
 .right {
-  width: 50%;
+  margin: auto;
 }
 
 .banner {
-  font-family: 'Patrick Hand', cursive;
   text-align: center;
   background-color: #49274A;
   color: #dbd8cc;
   border-radius: 20px;
   padding: 2em;
-  width: 500px;
+  width: 25rem;
 }
 
 .banner h1 {
@@ -132,21 +135,13 @@ main {
   height: auto;
 }
 
-@media screen and (max-width: 1205px) {
+@media screen and (max-width: 1250px) {
   main {
     display: flex;
     flex-direction: column;
-    flex-grow: 0;
     margin: auto;
     align-items: unset;
   }
-  .banner {
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 2rem;
-    width: 333px;
-  }
-
   .image-container img {
     margin-left: -6em;
     max-width: 300px;
@@ -155,21 +150,60 @@ main {
   }
 }
 
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  .presentation {
+    margin: 1rem;
+  }
+  .image-container {
+    display: none;
+  }
+  .about {
+    flex-direction: column;
+    padding: 0;
+  }
+  .text-container {
+    width: 20em;
+    text-align: justify;
+  }
+  .proyectos-container {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .proyecto,
+  .imagen-proyecto {
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
 footer {
   background-color: #49274A;
   color: #dbd8cc;
   text-align: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  z-index: 100;
 }
 
 footer h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 footer a {
   color: #dbd8cc;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   margin-right: 1rem;
 }
 
@@ -178,9 +212,10 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* sobre mí */
+/* página sobre mí */
 
 .about {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -197,10 +232,24 @@ footer a:hover {
 .text-container {
   flex: 2 1 600px;
   margin-left: 2rem;
-  
+  background: transparent;
+  color: #000;
+  overflow-y: auto;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding-bottom: 10rem;
 }
 
 .image-container__img {
+  position: absolute;
+  top: 10%; /* o el valor que necesites para alinearla como desees */
+  left: 20%;
+  transform: translateX(-50%);
+  position: fixed;
+  max-width: 15rem; /* Ajusta esto al tamaño deseado */
+  height: auto;
+  z-index: 10;
   max-width: 100%;
   height: auto;
   display: block;
@@ -209,77 +258,65 @@ footer a:hover {
   border: 5px solid #333;
 }
 
-/* Estilos para dispositivos con pantallas pequeñas */
-@media (max-width: 768px) {
-  .about {
-    flex-direction: column;
-    padding: 0;
-  }
-  .image-container {
-    margin-bottom: 2rem;
-    margin-right: 0;
-    margin-left: 6rem;
-  }
-  .text-container {
-    width: 20em;
-    text-align: justify;
-  }
+
+/*Projects*/
+
+.proyectos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - alturaHeader - alturaFooter); /* Ajusta la altura del contenedor */
+  margin: 0 auto;
 }
 
-/* secondhome */
-
-#proyectos {
-  padding: 2rem 0;
-}
-
-#proyectos h2 {
-  text-align: center;
-  font-size: 2rem;
+.proyecto {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2rem;
+  margin-right: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  max-width: 25rem;
   margin-bottom: 2rem;
 }
 
-#proyectos ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.imagen-proyecto {
+  width: 100%;
+  max-width: 50rem;
+  border-radius: 15px;
+  height: auto;
+  margin-bottom: 2rem;
 }
 
-#proyectos li {
-  max-width: 300px;
-  margin: 1rem;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  text-align: center;
-}
-
-#proyectos li h3 {
-  font-size: 1.5rem;
+.proyecto h2 {
+  color: #49274A;
   margin-bottom: 1rem;
 }
 
-#proyectos li p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+.proyecto p {
+  color: #49274A;
+  margin-bottom: 1.5rem;
 }
 
-#proyectos li a {
-  display: block;
-  background-color: #333;
+.proyecto a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #49274A;
   color: #fff;
-  padding: 0.5rem 1rem;
   text-decoration: none;
-  margin-top: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-#proyectos li a:hover {
-  background-color: #555;
+.proyecto a:hover {
+  background-color: #423840;
 }
 
-#proyectos a:last-of-type {
-  display: block;
-  text-align: center;
-  margin-top: 2rem;
-}
 
