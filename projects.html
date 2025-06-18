@@ -1,74 +1,47 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Portafolio</title>
+  <title>Proyectos - Eligreg López</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Tu nombre</h1>
     <nav>
-      <a href="home.html">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>Descripción breve de ti como desarrolladora web.</p>
-    </section>
-
-    <section id="proyectos">
-      <h2>Proyectos</h2>
-      <ul>
-        <li>
-          <h3>Proyecto 1</h3>
-          <p>Descripción breve del proyecto 1</p>
-          <a href="#">Ver proyecto</a>
-        </li>
-        <li>
-          <h3>Proyecto 2</h3>
-          <p>Descripción breve del proyecto 2</p>
-          <a href="#">Ver proyecto</a>
-        </li>
-        <li>
-          <h3>Proyecto 3</h3>
-          <p>Descripción breve del proyecto 3</p>
-          <a href="#">Ver proyecto</a>
-        </li>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobremi.html">Sobre mí</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
-      <a href="https://github.com/username" target="_blank">Visita mi GitHub para más proyectos</a>
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <form id="contact-form">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
-        
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" rows="5" required></textarea>
-        
-        <button type="submit">Enviar</button>
-      </form>
+    </nav>
+    <h1>Proyectos realizados</h1>
+  </header>
+  <main>
+    <section id="proyectos-lista">
+      <div class="proyectos-list">
+        <article class="proyecto-entry">
+          <h3><a href="https://github.com/eligregl/mi-proyecto1" target="_blank">Proyecto 1</a></h3>
+          <p class="proyecto-descripcion">Descripción breve del proyecto 1, tecnologías usadas y objetivo.</p>
+        </article>
+        <article class="proyecto-entry">
+          <h3><a href="https://github.com/eligregl/mi-proyecto2" target="_blank">Proyecto 2</a></h3>
+          <p class="proyecto-descripcion">Descripción breve del proyecto 2, tecnologías usadas y objetivo.</p>
+        </article>
+        <article class="proyecto-entry">
+          <h3><a href="https://github.com/eligregl/mi-proyecto3" target="_blank">Proyecto 3</a></h3>
+          <p class="proyecto-descripcion">Descripción breve del proyecto 3, tecnologías usadas y objetivo.</p>
+        </article>
+        <!-- Agrega más proyectos aquí -->
+      </div>
     </section>
   </main>
-
   <footer>
     <h3>Conéctate conmigo en redes sociales</h3>
-    <a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a>
-    <a href="https://twitter.com/username" target="_blank">Twitter</a>
+    <a href="https://www.linkedin.com/in/eligreglopez/" target="_blank">LinkedIn</a>
+    <a href="https://twitter.com/Eligregl" target="_blank">Twitter</a>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

@@ -1,45 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Sobre Mí</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí - Eligreg López</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="sobremi.html">Sobre mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="about">
-        <div class="image-container">
-            <img src="images/flatilustrationofme.png" alt="Mi Foto" class="image-container__img">
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobremi.html">Sobre mí</a></li>
+        <li><a href="index.html#proyectos">Proyectos</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <h1>Sobre mí</h1>
+  </header>
+  <main>
+    <section class="sobremi-section">
+      <div class="sobremi-container">
+        <div class="sobremi-img">
+          <img src="images/ilustracionsobremi.png" alt="Foto de Eligreg López">
         </div>
-        <div class="text-container">
-            <h1>Sobre Mí</h1>
-            <p>Nací en Caracas, y crecí en el cálido Zulia, un lugar de contrastes donde la aridez del suelo se contrapone con el florecer de la imaginación.
-            </p><br><p>
-            Me dediqué a estudiar Letras en la universidad, pero las circunstancias me llevaron a emprender un camino diferente. En medio de la crisis que afectaba a mi país, tomé la decisión de convertirme en una maestra de Castellano, Literatura y Latín.
-        </p><br><p>
-            Pero la vida siempre nos depara sorpresas, y pronto quedé embarazada, lo que me llevó a buscar una forma de trabajo más flexible. Así fue como me aventuré en el mundo del trabajo freelance, redactando artículos, asesorando negocios en SEO, manejando redes sociales y como asistente virtual.
-        </p><br><p>
-            Fue en 2019 cuando el destino me llevó a Colombia, un nuevo hogar, una nueva oportunidad. Allí, una beca en Platzi me permitió comenzar a estudiar desarrollo web, abriendo nuevos horizontes en mi carrera.
-        </p><br><p>
-            El año siguiente, participé en un bootcamp con PionerasDev, fortaleciéndome y adquiriendo nuevas habilidades para enfrentar los retos venideros.
-        </p><br><p>
-            Y así fue como llegué a Globant en 2020, donde trabajé como desarrolladora de software, enfocada en Angular, Linux y Docker. Colaboré en un proyecto donde aprendí la importancia de los conceptos de CI/CD en el desarrollo de software.
-        </p><br><p>
-            Pero mi mente siempre busca más, y ahora me interesa profundizar en DevOps y tecnologías Cloud, para seguir creciendo en mi carrera y aportar aún más al mundo de la tecnología.
-        </p><br><p>
-            Mi historia es una de perseverancia y adaptabilidad, de encontrar nuevas oportunidades en cada desafío que se presenta en el camino. Soy una mujer valiente, apasionada por la tecnología y siempre en busca de nuevos conocimientos y experiencias.</p>
+        <div class="sobremi-texto">
+          <h2>Eligreg López, Technical Writer y entusiasta de la literatura</h2>
+          <p>Technical Writer que transforma lo complejo en claro. Escribo documentación que guía, educa y conecta.</p>         
         </div>
-    <script src="script.js"></script>
+      </div>
+      <div class="sobremi-datos-caja">
+        <ul>
+            <li><strong>📍 Ubicación:</strong> Medellín, Colombia (disponible para trabajo remoto o reubicación)</li>
+            <li><strong>🧠 Especialidad:</strong> Documentación técnica, guías para usuarios, APIs, procesos internos</li>
+            <li><strong>🌍 Idiomas:</strong> Español (nativo), Inglés (C1)</li>
+            <li><strong>🛠️ Stack:</strong> Markdown, Git, HTML/CSS, Swagger, CMS, herramientas de documentación colaborativa</li>
+            <li><strong>🕊️ Intereses:</strong> UX writing, AI, comunicación inclusiva, literatura</li>
+        </ul>
+
+<div class="sobremi-links">
+  <a href="https://www.linkedin.com/in/eligreglopez/" target="_blank">
+    <img src="images/linkedin.svg" alt="LinkedIn" width="20" height="20">LinkedIn
+  </a>
+  <a href="https://github.com/eligregl" target="_blank">
+    <img src="images/github.svg" alt="GitHub" width="20" height="20">GitHub
+  </a>
+  <a href="https://twitter.com/Eligregl" target="_blank">
+    <img src="images/twitterx.svg" alt="Twitter" width="20" height="20">Twitter
+  </a>
+</div>
+
+
+        <div class="sobremi-contacto-caja">
+  <h3>Contacto directo</h3>
+  <form action="https://formspree.io/f/xjkrowqe" method="POST">
+  <label for="name">Nombre:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Correo:</label>
+  <input type="email" id="email" name="_replyto" required>
+
+  <label for="message">Mensaje:</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <button type="submit">Enviar</button>
+</form>
+</div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
