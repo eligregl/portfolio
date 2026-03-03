@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escritura - Eligreg López</title>
-  <meta name="description" content="Blog de Eligreg López sobre política, tecnología, literatura y reinvención.">
+  <title>Post - Eligreg López</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,20 +21,11 @@
         <li><a href="trabajo.html">trabajo</a></li>
       </ul>
     </nav>
-    <h1>Escritura</h1>
   </header>
 
-  <main class="container">
-    <div class="narrow-container" style="margin: 4rem auto;">
-      <p style="font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.7; color: var(--color-text-light);">
-        Escribo para entender. Para cavar en el lenguaje y encontrar algo parecido a la verdad. 
-        A veces sobre política y autoritarismo. A veces sobre código y documentación. 
-        Siempre sobre lo que significa reinventarse cuando el mundo se cae.
-      </p>
-    </div>
-
-    <div id="all-posts" class="blog-list">
-      <!-- Posts will be loaded dynamically -->
+  <main>
+    <div id="post-container">
+      <!-- Post will be loaded dynamically -->
     </div>
   </main>
 
@@ -56,10 +46,23 @@
 
   <script src="js/blog.js"></script>
   <script>
-    // Load all posts
+    // Get slug from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get('slug');
+
     document.addEventListener('DOMContentLoaded', async () => {
+      if (!slug) {
+        document.getElementById('post-container').innerHTML = `
+          <div class="narrow-container" style="margin: 4rem auto; text-align: center;">
+            <p>No se especificó ningún post.</p>
+            <a href="blog.html" class="read-more">← Volver al blog</a>
+          </div>
+        `;
+        return;
+      }
+
       await window.BlogSystem.loadPostsIndex();
-      window.BlogSystem.renderPostList(window.BlogSystem.postsIndex, 'all-posts');
+      await window.BlogSystem.renderSinglePost(slug, 'post-container');
     });
   </script>
 </body>

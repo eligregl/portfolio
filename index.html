@@ -3,107 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eligreg López - Blog & Portafolio</title>
+  <title>Eligreg López - Technical Writer & Escritora</title>
+  <meta name="description" content="Estudié literatura cuando Venezuela aún respiraba. Ahora documento APIs en Medellín. Entre ambos mundos: el código que funciona y las palabras que significan.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sobremi.html">Sobre mí</a></li>
-        <li><a href="projects.html">Proyectos</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
+  <!-- Magazine Cover - Single Viewport -->
+  <section class="magazine-cover-single">
+    <!-- Minimal Navigation -->
+    <nav class="magazine-nav-minimal">
+      <a href="index.html" class="nav-active">inicio</a>
+      <a href="sobre-mi.html">sobre mí</a>
+      <a href="trabajo.html">trabajo</a>
     </nav>
-    <h1>Eligreg López</h1>
-    <h2>Technical + Writer</h2>
-  </header>
-  <main>
-    <!-- Introducción sobre mí -->
-    <section id="intro" class="intro-section">
-      <div class="intro-container">
-        <div class="intro-img">
-          <img src="images/eligilustration.png" alt="Ilustración de Eligreg López">
+
+    <!-- Photo (full height, left half) -->
+    <div class="cover-photo-full">
+      <img src="images/yo.jpg" alt="Eligreg López" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <!-- Scattered Text Elements -->
+    <div class="cover-text-scattered">
+      <!-- Main name -->
+      <h1 class="text-element main-title">
+        ELIGREG<br>LÓPEZ
+      </h1>
+
+      <!-- Subtitle -->
+      <div class="text-element subtitle">
+        technical writer<br>+ escritora
+      </div>
+
+      <!-- Statement -->
+      <p class="text-element statement">
+        Estudié literatura cuando Venezuela aún respiraba. Ahora documento APIs en Medellín.
+      </p>
+
+      <!-- Location -->
+      <div class="text-element location">
+        Venezuela → Colombia
+      </div>
+
+      <!-- Portfolio section (grouped container) -->
+      <div class="portfolio-section">
+        <div class="toc-mini">
+          <a href="trabajo.html" class="mini-heading">PORTFOLIO:</a>
         </div>
-        <div class="intro-text">
-          <p>
-            ¡Hola! Soy Eligreg López, escritora apasionada y desarrolladora web. Me encanta crear historias y soluciones digitales. En este blog comparto mis pensamientos, proyectos y experiencias. ¡Bienvenido/a!
-          </p>
+        <div class="feature-item">
+          <a href="trabajo.html">→ Guía Técnica — Análisis de Datos</a>
+        </div>
+        <div class="feature-item">
+          <a href="trabajo.html">→ SEO & Content — Clearfork Academy</a>
+        </div>
+        <div class="feature-item">
+          <a href="trabajo.html">→ Desarrollo Web — Mañana El Espacio</a>
         </div>
       </div>
-    </section>
-    <!-- Proyectos -->
-<section id="proyectos" class="projects">
-  <h2>Proyectos Destacados</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <h3>Sitio Web <br> Mañana El Espacio</h3>
-      <img src="images/mananaelespacio.png" alt="Sitio Web – Mañana El Espacio" class="project-img">
-      <p>Sitio web diseñado para una banda de indie pop. Aporté la estructura, el contenido y el diseño responsivo.</p>
-      <a href="#" target="_blank">Ver proyecto</a>
+
+      <!-- Blogposts section (grouped container) -->
+      <div class="blogposts-section">
+        <div class="toc-mini">
+          <a href="blog.html" class="mini-heading">BLOGPOSTS:</a>
+        </div>
+        <div class="feature-item">
+          <a href="post.html?slug=piromanos">→ Mientras el mundo arde, elegimos a los pirómanos</a>
+        </div>
+        <div class="feature-item">
+          <a href="post.html?slug=trabajo-freelance">→ Trabajo Freelance: Bote Salvavidas</a>
+        </div>
+        <div class="feature-item">
+          <a href="post.html?slug=causa-scribendi">→ Causa Scribendi</a>
+        </div>
+      </div>
     </div>
-    <div class="project-card">
-      <h3>Guía Técnica <br> Análisis de Datos</h3>
-      <img src="images/datoscodigofacilito.png" alt="Guía Técnica – Análisis de Datos" class="project-img">
-      <p>Redacción pedagógica para un curso online. Estructuré conceptos clave para personas sin background técnico.</p>
-      <a href="#" target="_blank">Ver documento</a>
+
+    <!-- Scan lines -->
+    <div class="scan-lines"></div>
+  </section>
+
+  <footer>
+    <h3>Conéctate</h3>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/eligreglopez/" target="_blank" rel="noopener">
+        <span>→</span> LinkedIn
+      </a>
+      <a href="https://github.com/eligregl" target="_blank" rel="noopener">
+        <span>→</span> GitHub
+      </a>
+      <a href="https://twitter.com/Eligregl" target="_blank" rel="noopener">
+        <span>→</span> Twitter
+      </a>
     </div>
-    <div class="project-card">
-      <h3>SEO <br> Clearfork Academy</h3>
-      <img src="images/clearforkacademy.png" alt="SEO – Clearfork Academy" class="project-img">
-      <p>Optimización de contenido web para una clínica de salud mental en EE.UU. Redacción con enfoque en conversión.</p>
-      <a href="https://clearforkacademy.com/" target="_blank">Ver sitio</a>
-    </div>
-    <div class="project-card ver-mas">
-      <a href="proyectos.html">Ver más proyectos &rarr;</a>
-    </div>
-  </div>
-</section>
-    <!-- Entradas del Blog -->
-<section id="blog">
-  <h2>Entradas del Blog</h2>
-  <div class="blog-list">
-    <article class="blog-entry">
-      <h3>Causa Scribendi</h3>
-      <img src="images/hand-writing-notebook-laptop.jpg" alt="Causa Scribendi" class="blog-img">
-      <p class="blog-date">29 abril 2017 · Publicado originalmente en Medium</p>
-      <p class="blog-summary">Un ensayo íntimo sobre por qué escribir sigue siendo una forma de libertad personal, una búsqueda de significado, y una manera de cavar en el lenguaje como si fuera oro. Entre Depeche Mode, Flannery O’Connor y Virginia Woolf, este texto es mi manifiesto sobre el acto de escribir.</p>
-      <a href="posts/causa-scribendi.html" class="read-more">Leer entrada →</a>
-    </article>
-    <article class="blog-entry">
-      <h3>Trabajo Freelance: Bote Salvavidas</h3>
-      <img src="images/woman-working-while-sitting-sofa.jpg" alt="Trabajo Freelance: Bote Salvavidas" class="blog-img">
-      <p class="blog-date">7 junio 2017 · eligregl</p>
-      <p class="blog-summary">Un testimonio personal sobre cómo el trabajo freelance se convirtió en una tabla de salvación durante la crisis venezolana. Entre anécdotas, reflexiones y consejos prácticos, comparto lo que aprendí trabajando desde casa con un bebé en brazos y la urgencia de sobrevivir.</p>
-      <a href="posts/trabajo-freelance.html" class="read-more">Leer entrada →</a>
-    </article>
-    <article class="blog-entry">
-      <h3>Mientras el mundo arde, elegimos a los pirómanos</h3>
-      <img src="images/dictatorship-oppression-collage-concept.jpg" alt="Mientras el mundo arde, elegimos a los pirómanos" class="blog-img">
-      <p class="blog-date">20 noviembre 2024 · eligregl</p>
-      <p class="blog-summary">Una reflexión urgente sobre los peligros del autoritarismo moderno, la manipulación mediática y cómo los líderes del mundo están alimentando el fuego en plena crisis climática. Desde Venezuela hasta EE.UU., una mirada crítica a las estrategias que usan “los hombres malos” para dividir y gobernar.</p>
-      <a href="posts/pirómanos.html" class="read-more">Leer entrada →</a>
-    </article>
-    <div class="blog-entry ver-mas">
-      <a href="blog.html">Ver más entradas &rarr;</a>
-    </div>
-  </div>
-</section>
-  </main>
-<footer>
-  <h3>Conéctate conmigo en redes sociales</h3>
-  <div class="sobremi-links">
-    <a href="https://www.linkedin.com/in/eligreglopez/" target="_blank">
-      <img src="images/linkedin.svg" alt="LinkedIn" width="22" height="22">LinkedIn
-    </a>
-    <a href="https://github.com/eligregl" target="_blank">
-      <img src="images/github.svg" alt="GitHub" width="22" height="22">GitHub
-    </a>
-    <a href="https://twitter.com/Eligregl" target="_blank">
-      <img src="images/twitterx.svg" alt="Twitter" width="22" height="22">Twitter
-    </a>
-  </div>
-</footer>
+  </footer>
+
+  <script src="js/blog.js"></script>
+  <script>
+    // Load recent posts on homepage
+    document.addEventListener('DOMContentLoaded', async () => {
+      await window.BlogSystem.loadPostsIndex();
+      const recentPosts = window.BlogSystem.postsIndex.slice(0, 3);
+      window.BlogSystem.renderPostList(recentPosts, 'recent-posts');
+    });
+  </script>
 </body>
 </html>
