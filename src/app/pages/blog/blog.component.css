@@ -1,0 +1,220 @@
+.blog-flow {
+  background: var(--color-bg);
+  padding: 8rem 0 5rem;
+  min-height: 100vh;
+}
+
+.blog-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* ---- Header (idéntico al sistema) ---- */
+.blog-header {
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
+.blog-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.blog-title {
+  font-family: var(--font-sans);
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 var(--color-secondary);
+  margin: 0;
+}
+
+/* ---- Opening ---- */
+.blog-opening {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-primary);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.5rem;
+  margin: 0 0 3rem 0;
+}
+
+/* ---- Cabecera del índice ---- */
+.posts-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.posts-count {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.posts-divider {
+  flex: 1;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---- Lista de posts ---- */
+.posts-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Tarjeta horizontal ---- */
+.post-card {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+/* Línea izquierda que aparece en hover */
+.post-card::before {
+  content: '';
+  position: absolute;
+  left: -3rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-primary);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s ease;
+}
+
+.post-card:hover::before { transform: scaleY(1); }
+
+.post-card:hover .post-title {
+  color: var(--color-secondary);
+}
+
+.post-card:hover .post-cta {
+  color: var(--color-secondary);
+  border-bottom-color: var(--color-secondary);
+}
+
+/* ---- Columna izquierda: número + fecha ---- */
+.post-index-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 0.2rem;
+}
+
+.post-num {
+  font-family: var(--font-mono);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--color-border);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+  /* Num decorativo grande */
+}
+
+.post-date {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+}
+
+/* ---- Columna derecha: contenido ---- */
+.post-body-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.post-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.25;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.post-summary {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.post-cta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-primary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 1px;
+  align-self: flex-start;
+  transition: var(--transition);
+}
+
+.loading {
+  font-family: var(--font-mono);
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  padding: 2rem 0;
+}
+
+.load-more-wrap {
+  padding: 2.5rem 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.load-more-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  background: none;
+  border: 1px solid var(--color-border);
+  padding: 0.7rem 2.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.load-more-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-primary);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .blog-container { padding: 0 1.5rem; }
+  .post-card { grid-template-columns: 60px 1fr; gap: 1.2rem; }
+  .post-num { font-size: 1.6rem; }
+  .post-card::before { left: -1.5rem; }
+}

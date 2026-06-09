@@ -1,0 +1,246 @@
+/* ---- Phosphor glow ---- */
+@keyframes phosphor-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.85; }
+  94% { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ---- Magazine Cover ---- */
+.magazine-cover-single {
+  height: 100vh;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  /* animation: phosphor-flicker 8s infinite; */
+}
+
+/* Ruido de grano CRT */
+.magazine-cover-single::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.35;
+}
+
+.cover-photo-full {
+  position: absolute;
+  left: 0; top: 0;
+  width: 48%;
+  height: 100%;
+  background: var(--color-bg);
+  border-right: 1px solid var(--color-accent);
+}
+
+/* Foto: desaturada con tinte frío */
+.cover-photo-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(60%) contrast(1.1) brightness(0.8);
+}
+
+/* Overlay con tinte frío sobre la foto */
+.cover-photo-full::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 10, 50, 0.3);
+  pointer-events: none;
+}
+
+/* Texto disperso */
+.cover-text-scattered {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.text-element {
+  position: absolute;
+  pointer-events: auto;
+}
+
+/* SYS label superior */
+.text-element.sys-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  top: 4%;
+  right: 4%;
+  z-index: 5;
+}
+
+/* Nombre principal — mono condensado, sin serif */
+.text-element.main-title {
+  font-family: var(--font-mono);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 600;
+  line-height: 0.95;
+  color: var(--color-secondary);
+  letter-spacing: -0.02em;
+  top: 8%;
+  right: 4%;
+  z-index: 5;
+  text-shadow: 0 0 20px rgba(138, 63, 168, 0.5);
+}
+
+/* Cursor parpadeante después del nombre */
+.text-element.main-title::after {
+  content: '_';
+  animation: blink 1.1s step-end infinite;
+  color: var(--color-primary);
+}
+
+.text-element.subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  top: 36%;
+  right: 4%;
+  z-index: 5;
+  border-left: 2px solid var(--color-accent);
+  padding-left: 1rem;
+}
+
+.text-element.statement {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+  top: 50%;
+  right: 4%;
+  max-width: 320px;
+  z-index: 5;
+  opacity: 0.75;
+}
+
+.text-element.location {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  bottom: 3%;
+  left: 52%;
+  z-index: 5;
+}
+
+/* Portfolio & Blog sections */
+.portfolio-section,
+.blogposts-section {
+  position: absolute;
+  z-index: 10;
+  pointer-events: auto;
+  width: 22%;
+}
+
+.portfolio-section {
+  bottom: 14%;
+  left: 52%;
+}
+
+.blogposts-section {
+  bottom: 14%;
+  right: 4%;
+}
+
+.toc-mini { margin-bottom: 0.6rem; }
+
+.mini-heading {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-primary);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 3px;
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  transition: var(--transition);
+}
+
+.mini-heading:hover { color: var(--color-secondary); border-bottom-color: var(--color-secondary); }
+
+.feature-item {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.01em;
+}
+
+.feature-item a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.feature-item a:hover { color: var(--color-secondary); }
+
+/* ---- Responsive ---- */
+@media (max-width: 1200px) {
+  .portfolio-section { left: 50%; bottom: 32%; width: 24%; }
+  .blogposts-section { right: 3%; bottom: 14%; width: 24%; }
+}
+
+@media (max-width: 968px) {
+  .magazine-cover-single {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .cover-photo-full {
+    position: relative;
+    width: 100%;
+    height: 55vw;
+    max-height: 320px;
+    border-right: none;
+    border-bottom: 1px solid var(--color-accent);
+  }
+
+  .cover-text-scattered {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .text-element,
+  .portfolio-section,
+  .blogposts-section {
+    position: relative !important;
+    top: auto !important; right: auto !important;
+    bottom: auto !important; left: auto !important;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cover-photo-full { max-height: 260px; }
+  .cover-text-scattered { padding: 1.5rem 1rem; }
+  .text-element.main-title { font-size: 2.4rem; }
+}

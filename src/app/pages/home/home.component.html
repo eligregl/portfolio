@@ -1,0 +1,58 @@
+<section class="magazine-cover-single">
+
+  <!-- Foto (mitad izquierda) -->
+  <div class="cover-photo-full">
+    <img src="images/yo.jpg" alt="Eligreg López" />
+  </div>
+
+  <!-- Texto disperso -->
+  <div class="cover-text-scattered">
+
+    <div class="text-element sys-label">SYS://ELIGREG_LOPEZ &nbsp; ONLINE</div>
+
+    <h1 class="text-element main-title">
+      ELIGREG<br>LÓPEZ
+    </h1>
+
+    <div class="text-element subtitle">
+      technical writer<br>+ escritora
+    </div>
+
+    <p class="text-element statement">
+      Estudié literatura cuando Venezuela aún respiraba. Ahora documento APIs en Medellín.
+    </p>
+
+    <div class="text-element location">Venezuela &gt;Colombia</div>
+
+    <!-- Portfolio -->
+    <div class="portfolio-section">
+      <div class="toc-mini">
+        <a routerLink="/trabajo" class="mini-heading">PORTFOLIO:</a>
+      </div>
+      <div class="feature-item">
+        <a routerLink="/trabajo">&gt;Guía Técnica — Análisis de Datos</a>
+      </div>
+      <div class="feature-item">
+        <a routerLink="/trabajo">&gt;SEO & Content — Clearfork Academy</a>
+      </div>
+      <div class="feature-item">
+        <a routerLink="/trabajo">&gt;Desarrollo Web — Mañana El Espacio</a>
+      </div>
+    </div>
+
+    <!-- Blogposts (dinámico — top 3 más recientes) -->
+    <div class="blogposts-section">
+      <div class="toc-mini">
+        <a routerLink="/escritura" class="mini-heading">BLOGPOSTS:</a>
+      </div>
+      @for (post of recentPosts; track post.slug) {
+        <div class="feature-item">
+          <a [routerLink]="['/escritura', post.slug]">&gt;{{ post.title }}</a>
+        </div>
+      }
+    </div>
+
+  </div>
+
+  <div class="scan-lines"></div>
+</section>
