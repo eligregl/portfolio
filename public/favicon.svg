@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Fondo -->
+  <rect width="32" height="32" fill="#06050e"/>
+  <!-- E: barra vertical izquierda -->
+  <rect x="5" y="5" width="5" height="22" fill="#b83d72"/>
+  <!-- E: barra superior -->
+  <rect x="5" y="5" width="20" height="5" fill="#b83d72"/>
+  <!-- E: barra media (más corta) -->
+  <rect x="5" y="14" width="14" height="4" fill="#b83d72"/>
+  <!-- E: barra inferior -->
+  <rect x="5" y="22" width="20" height="5" fill="#b83d72"/>
+</svg>

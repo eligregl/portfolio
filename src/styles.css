@@ -1,0 +1,111 @@
+/* ============================================
+   ELIGREG LÓPEZ — estilos globales
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta: cyberpunk opaco — morado, magenta, turquesa sin chillar */
+  --color-primary:    #8a3fa8;   /* morado apagado */
+  --color-secondary:  #b83d72;   /* magenta opaco */
+  --color-accent:     #1e7a7a;   /* turquesa muted */
+  --color-bg:         #06050e;   /* negro con tinte frío */
+  --color-bg-alt:     #0c0a18;   /* dark purple-black */
+  --color-text:       #e0d8f0;   /* lavanda claro — texto principal */
+  --color-text-light: #9080b4;   /* morado medio — texto secundario legible */
+  --color-border:     #1a1230;   /* borde oscuro frío */
+
+  --font-serif: 'Georgia', serif;
+  --font-sans:  'Inter', -apple-system, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Courier New', monospace;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  color: var(--color-secondary);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Scan lines reutilizable */
+.scan-lines {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(138, 63, 168, 0.04) 2px,
+    rgba(138, 63, 168, 0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Footer */
+footer {
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+footer h3 {
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}

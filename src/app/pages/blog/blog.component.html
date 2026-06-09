@@ -1,0 +1,47 @@
+<main class="blog-flow">
+  <div class="blog-container">
+
+    <header class="blog-header">
+      <span class="blog-label">// ESCRITURA</span>
+      <h1 class="blog-title">ESCRITURA</h1>
+    </header>
+
+    <p class="blog-opening">
+      Escribo para entender. Para cavar en el lenguaje y encontrar algo parecido a la verdad.
+      A veces sobre política y autoritarismo. A veces sobre código y documentación.
+      Siempre sobre lo que significa reinventarse cuando el mundo se cae.
+    </p>
+
+    <div class="posts-header">
+      <span class="posts-count">{{ allPosts.length }} textos</span>
+      <span class="posts-divider"></span>
+    </div>
+
+    <div class="posts-list">
+      @for (post of visiblePosts; track post.slug; let i = $index) {
+        <a [routerLink]="['/escritura', post.slug]" class="post-card">
+          <div class="post-index-col">
+            <span class="post-num">{{ i + 1 }}</span>
+            <span class="post-date">{{ formatDate(post.date) }}</span>
+          </div>
+          <div class="post-body-col">
+            <h2 class="post-title">{{ post.title }}</h2>
+            <p class="post-summary">{{ post.summary }}</p>
+            <span class="post-cta">leer</span>
+          </div>
+        </a>
+      }
+
+      @if (allPosts.length === 0) {
+        <p class="loading">cargando...</p>
+      }
+    </div>
+
+    @if (hasMore) {
+      <div class="load-more-wrap">
+        <button class="load-more-btn" (click)="loadMore()">cargar más</button>
+      </div>
+    }
+
+  </div>
+</main>
