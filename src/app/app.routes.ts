@@ -19,7 +19,7 @@ const seo: Record<string, DatosSeo> = {
   },
   trabajo: {
     titulo: 'Trabajo',
-    descripcion: 'Consultoría en documentación y contenido para lectores humanos y sistemas de IA, y talleres para equipos de tecnología que usan IA sin perder profundidad de análisis.',
+    descripcion: 'Consultoría en documentación de sistemas informáticos y talleres de lectura, escritura, comunicación y pensamiento para equipos y personas.',
     ruta: '/trabajo',
   },
   escritura: {
