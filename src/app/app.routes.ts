@@ -8,18 +8,18 @@ import { DatosSeo } from './services/seo.service';
  */
 const seo: Record<string, DatosSeo> = {
   inicio: {
-    titulo: 'Eligreg López — Technical Writer & Escritora',
-    descripcion: 'Estudié literatura cuando Venezuela aún respiraba. Ahora documento APIs en Medellín. Entre ambos mundos: el código que funciona y las palabras que significan.',
+    titulo: 'Eligreg López — Consultoría, talleres y escritura',
+    descripcion: 'Estudié literatura en Maracaibo cuando todavía era posible. Hoy ayudo a equipos de tecnología a escribir para personas y máquinas sin perder el criterio.',
     ruta: '/',
   },
   sobreMi: {
     titulo: 'Sobre mí',
-    descripcion: 'Venezolana en Medellín. Estudié Letras y Lingüística en Maracaibo, aprendí desarrollo web para sobrevivir y hoy escribo documentación técnica y ensayos.',
+    descripcion: 'Venezolana en Medellín. Estudié Letras y Lingüística en Maracaibo, documenté software en Globant y Wizeline, y hoy asesoro, doy talleres y escribo ensayos.',
     ruta: '/sobre-mi',
   },
   trabajo: {
     titulo: 'Trabajo',
-    descripcion: 'Documentación técnica, contenido web y desarrollo: proyectos para Código Facilito, Clearfork Academy y Mañana El Espacio.',
+    descripcion: 'Consultoría en documentación y contenido para lectores humanos y sistemas de IA, y talleres para equipos de tecnología que usan IA sin perder profundidad de análisis.',
     ruta: '/trabajo',
   },
   escritura: {
