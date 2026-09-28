@@ -12,9 +12,11 @@
           <h1>{{ p.title }}</h1>
           <span class="post-date">{{ formatDate(p.date) }}</span>
         </div>
-      }
 
-      <div class="post-content" [innerHTML]="content()"></div>
+        <div class="post-content" [innerHTML]="content()"></div>
+      } @else {
+        <p class="loading">Este texto no existe o cambió de dirección.</p>
+      }
 
       <div class="post-nav">
         <a routerLink="/escritura" class="back-link">← volver a escritura</a>

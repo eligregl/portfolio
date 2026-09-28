@@ -15,11 +15,12 @@
     </h1>
 
     <div class="text-element subtitle">
-      technical writer<br>+ escritora
+      consultoría<br>+ talleres<br>+ escritura
     </div>
 
     <p class="text-element statement">
-      Estudié literatura cuando Venezuela aún respiraba. Ahora documento APIs en Medellín.
+      Estudié literatura en Maracaibo cuando todavía era posible. Hoy ayudo a equipos de
+      tecnología a escribir para personas y máquinas sin perder el criterio.
     </p>
 
     <div class="text-element location">Venezuela &gt;Colombia</div>
@@ -27,23 +28,23 @@
     <!-- Portfolio -->
     <div class="portfolio-section">
       <div class="toc-mini">
-        <a routerLink="/trabajo" class="mini-heading">PORTFOLIO:</a>
+        <a routerLink="/trabajo" class="mini-heading">SERVICIOS:</a>
       </div>
       <div class="feature-item">
-        <a routerLink="/trabajo">&gt;Guía Técnica — Análisis de Datos</a>
+        <a routerLink="/trabajo" fragment="consultoria">&gt;Consultoría — docs para personas e IA</a>
       </div>
       <div class="feature-item">
-        <a routerLink="/trabajo">&gt;SEO & Content — Clearfork Academy</a>
+        <a routerLink="/trabajo" fragment="talleres">&gt;Talleres — IA sin perder el criterio</a>
       </div>
       <div class="feature-item">
-        <a routerLink="/trabajo">&gt;Desarrollo Web — Mañana El Espacio</a>
+        <a routerLink="/escritura">&gt;Escritura — ensayos</a>
       </div>
     </div>
 
     <!-- Blogposts (dinámico — top 3 más recientes) -->
     <div class="blogposts-section">
       <div class="toc-mini">
-        <a routerLink="/escritura" class="mini-heading">BLOGPOSTS:</a>
+        <a routerLink="/escritura" class="mini-heading">ENSAYOS:</a>
       </div>
       @for (post of recentPosts; track post.slug) {
         <div class="feature-item">

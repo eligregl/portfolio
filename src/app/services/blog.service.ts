@@ -8,11 +8,14 @@ import { Post } from '../models/post.model';
 export class BlogService {
   private http = inject(HttpClient);
 
+  /** Del más reciente al más antiguo. Las fechas AAAA-MM-DD se ordenan como texto. */
+  static ordenar(posts: Post[]): Post[] {
+    return [...posts].sort((a, b) => b.date.localeCompare(a.date));
+  }
+
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>('posts/posts.json').pipe(
-      map(posts => posts.sort((a, b) =>
-        new Date(b.date).getTime() - new Date(a.date).getTime()
-      ))
+      map(posts => BlogService.ordenar(posts))
     );
   }
 
