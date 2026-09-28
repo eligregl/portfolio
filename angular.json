@@ -41,6 +41,12 @@
             "outputPath": "dist/eligreg-portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "prerender": {
+              "discoverRoutes": false,
+              "routesFile": "routes.txt"
+            },
+            "ssr": false,
             "polyfills": [
               "zone.js"
             ],

@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { Post } from '../../models/post.model';
+import { formatearFecha } from '../../utils/fecha';
 
 const PAGE_SIZE = 6;
 
@@ -36,9 +37,5 @@ export class BlogComponent implements OnInit {
     this.visibleCount += PAGE_SIZE;
   }
 
-  formatDate(dateStr: string): string {
-    return new Date(dateStr).toLocaleDateString('es-CO', {
-      year: 'numeric', month: 'long', day: 'numeric'
-    });
-  }
+  formatDate = formatearFecha;
 }

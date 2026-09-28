@@ -61,6 +61,8 @@ Cualquier otra ruta redirige a `/`.
 
 3. Haz commit y push a `master`. Vercel despliega solo.
 
+No hay que tocar nada más: antes de cada build, `scripts/generar-rutas.mjs` lee `posts.json`, agrega el post a la lista de páginas que se prerenderizan y actualiza `sitemap.xml`.
+
 El blog ordena los posts por `date`, del más reciente al más antiguo. El `slug` tiene que coincidir con el nombre del archivo, sin `.md`.
 
 ### Formato del Markdown
@@ -80,6 +82,15 @@ Texto con **negritas**, *cursivas* y [enlaces](https://ejemplo.com).
 ## Imágenes
 
 Van en `public/images/` y se referencian como `images/archivo.jpg`. Redimensiona antes de subirlas: 2400 px en el lado largo alcanza para una imagen a pantalla completa.
+
+## Prerender y SEO
+
+`npm run build` genera un HTML estático por ruta (`/`, `/sobre-mi`, `/trabajo`, `/escritura` y cada post). Así Google, LinkedIn y WhatsApp leen el texto y las etiquetas sin ejecutar JavaScript. En el navegador, Angular hidrata ese HTML y sigue funcionando como SPA.
+
+- `src/main.server.ts` y `src/app/app.config.server.ts`: configuración del prerender.
+- `src/app/services/blog.service.server.ts`: durante el build lee los posts desde `public/posts` en disco.
+- `src/app/services/seo.service.ts`: escribe título, descripción, URL canónica y etiquetas Open Graph.
+- Los textos de SEO de las páginas fijas están en `src/app/app.routes.ts`. Los de cada post salen de `posts.json` (`title` y `summary`).
 
 ## Analítica
 
