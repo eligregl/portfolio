@@ -37,8 +37,8 @@ export interface Taller {
 
 export const TALLERES: Taller[] = [
   {
-    id: 'lectores-con-criterio',
-    titulo: 'Club de lectura: Lectores con criterio',
+    id: 'club-de-lectura',
+    titulo: 'Club de lectura: La Variable Humana',
     publico: 'Cualquier persona que quiera leer en compañía, sepa o no de tecnología',
     descripcion:
       'Un club mensual de libros que piensan la tecnología, el poder y la vida ' +
