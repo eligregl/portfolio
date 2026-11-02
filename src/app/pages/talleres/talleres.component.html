@@ -45,10 +45,15 @@
                   }
                   <span class="taller-nota">Pago seguro con Wompi</span>
                 } @else {
-                  <a class="taller-button" [href]="correoReserva(t)">
-                    {{ t.gratis ? 'Inscribirme' : 'Reservar mi cupo' }}
-                  </a>
-                  <span class="taller-nota">Te respondo por correo</span>
+                  @if (enlaceFormulario(t); as form) {
+                    <a class="taller-button" [href]="form" target="_blank" rel="noopener">Inscribirme</a>
+                    <span class="taller-nota">Gratis, con inscripción previa</span>
+                  } @else {
+                    <a class="taller-button" [href]="correoReserva(t)">
+                      {{ t.gratis ? 'Inscribirme' : 'Reservar mi cupo' }}
+                    </a>
+                    <span class="taller-nota">Te respondo por correo</span>
+                  }
                 }
               </div>
             </div>

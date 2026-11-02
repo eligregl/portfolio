@@ -56,8 +56,9 @@ export const TALLERES: Taller[] = [
     publico: 'Todo público, mayores de edad',
     descripcion:
       'Taller de escritura expresiva: un espacio seguro y guiado para procesar las ' +
-      'emociones a través de la escritura. La segunda edición fue el 28 de octubre.',
-    formato: 'En línea, por Google Meet',
+      'emociones a través de la escritura. Se repite una vez al mes.',
+    formato: 'En línea, por Google Meet, una vez al mes',
     gratis: true,
+    formulario: 'https://docs.google.com/forms/d/e/1FAIpQLSfIT9iQLTnwZoh4DFT6PO2txZZUmUPQqsFyAPnSOX1lUH4M_g/viewform?usp=header',
   },
 ];
