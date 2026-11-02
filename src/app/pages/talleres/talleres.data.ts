@@ -43,9 +43,10 @@ export const TALLERES: Taller[] = [
     descripcion:
       'Club de conversación en inglés para hispanohablantes. Leemos y conversamos para ' +
       'mantener el cerebro en forma mientras practicamos inglés.',
-    formato: 'En línea, por Google Meet, con grupo de WhatsApp',
+    formato: 'En línea, por Google Meet, una sesión semanal, con grupo de WhatsApp',
     fecha: 'Primera sesión: sábado 14 de noviembre, 3 p. m. (hora de Colombia)',
-    precio: '10 USD al mes',
+    precio: '10 USD por 4 sesiones',
+    enlacePago: 'https://checkout.wompi.co/l/VPOS_aWIBf0',
     formulario: 'https://forms.gle/Tb7fCHNfRe4cD4p26',
   },
   {
