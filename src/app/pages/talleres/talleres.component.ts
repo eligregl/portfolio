@@ -19,6 +19,12 @@ export class TalleresComponent {
     return t.enlacePago?.startsWith(PREFIJO_WOMPI) ? t.enlacePago : null;
   }
 
+  /** Solo se acepta un formulario de Google. */
+  enlaceFormulario(t: Taller): string | null {
+    const u = t.formulario ?? '';
+    return u.startsWith('https://forms.gle/') || u.startsWith('https://docs.google.com/forms/') ? u : null;
+  }
+
   precio(t: Taller): string {
     if (t.gratis) return 'Gratis';
     if (t.precio) return t.precio;

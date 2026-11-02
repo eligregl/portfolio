@@ -7,6 +7,8 @@
  *   2. Copia la URL (empieza por https://checkout.wompi.co/l/).
  *   3. Pégala en `enlacePago` y escribe el monto en `precioCop`.
  *
+ * `formulario` (opcional) agrega un botón "Dejar mis datos" que lleva a un formulario de Google.
+ *
  * Mientras `enlacePago` esté vacío, el botón abre un correo para reservar.
  * No hay llaves ni secretos en este archivo: el link de pago es público.
  */
@@ -29,6 +31,8 @@ export interface Taller {
   gratis?: boolean;
   /** URL del link de pago de Wompi. */
   enlacePago?: string;
+  /** Formulario de Google para dejar datos o mostrar interés. */
+  formulario?: string;
 }
 
 export const TALLERES: Taller[] = [
@@ -40,19 +44,11 @@ export const TALLERES: Taller[] = [
       'Un club mensual de libros que piensan la tecnología, el poder y la vida ' +
       'contemporánea, con ficción y ensayo por turnos. Antes de cada sesión recibes una guía ' +
       'de lectura con cinco preguntas, y entre sesiones la conversación sigue en un grupo de WhatsApp.',
-    formato: 'Una sesión mensual de 75 minutos, por Google Meet, el último miércoles del mes',
-    fecha: 'Miércoles 25 de noviembre. Libro: La sociedad del cansancio, de Byung-Chul Han',
+    formato: 'Una sesión mensual de 75 minutos, por Google Meet, el último sábado del mes',
+    fecha: 'Sábado 28 de noviembre. Libro: El caballero inexistente, de Italo Calvino',
     precio: '5 USD por puesto',
     enlacePago: 'https://checkout.wompi.co/l/VPOS_aWIBf0',
-  },
-  {
-    id: 'ia-sin-perder-el-criterio',
-    titulo: 'Cómo usar la IA sin perder el criterio técnico',
-    publico: 'Equipos y profesionales de tecnología que usan IA a diario',
-    descripcion:
-      'Escribes más rápido y piensas con menos profundidad. El taller trabaja con casos ' +
-      'reales del equipo para recuperar el análisis que la herramienta te ahorra y que no ' +
-      'deberías delegar. Lo dicté con Venezolanas in Tech.',
+    formulario: 'https://forms.gle/a3Lq5cW1btAP7UGv5',
   },
   {
     id: 'escribir-la-grieta',

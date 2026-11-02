@@ -40,6 +40,9 @@
               <div class="taller-actions">
                 @if (enlacePago(t); as pago) {
                   <a class="taller-button" [href]="pago" target="_blank" rel="noopener">Reservar y pagar</a>
+                  @if (enlaceFormulario(t); as form) {
+                    <a class="taller-button taller-button--ghost" [href]="form" target="_blank" rel="noopener">Dejar mis datos</a>
+                  }
                   <span class="taller-nota">Pago seguro con Wompi</span>
                 } @else {
                   <a class="taller-button" [href]="correoReserva(t)">
