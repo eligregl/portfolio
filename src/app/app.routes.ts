@@ -24,7 +24,7 @@ const seo: Record<string, DatosSeo> = {
   },
   talleres: {
     titulo: 'Talleres',
-    descripcion: 'Talleres de lectura, escritura, comunicación y pensamiento. Club de lectura mensual y escritura expresiva. Inscripción en línea.',
+    descripcion: 'Talleres de lectura, escritura, comunicación y pensamiento. Club de lectura, club de conversación en inglés y escritura expresiva. Inscripción en línea.',
     ruta: '/talleres',
   },
   escritura: {
