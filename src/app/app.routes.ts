@@ -22,6 +22,11 @@ const seo: Record<string, DatosSeo> = {
     descripcion: 'Consultoría en documentación de sistemas informáticos y talleres de lectura, escritura, comunicación y pensamiento para equipos y personas.',
     ruta: '/trabajo',
   },
+  talleres: {
+    titulo: 'Talleres',
+    descripcion: 'Talleres de lectura, escritura, comunicación y pensamiento. Cómo usar la IA sin perder el criterio técnico y escritura expresiva. Inscripción en línea.',
+    ruta: '/talleres',
+  },
   escritura: {
     titulo: 'Escritura',
     descripcion: 'Ensayos sobre datos, poder, autoritarismo y lenguaje, escritos desde la diáspora venezolana.',
@@ -49,6 +54,12 @@ export const routes: Routes = [
     data: { seo: seo['trabajo'] },
     loadComponent: () =>
       import('./pages/trabajo/trabajo.component').then(m => m.TrabajoComponent),
+  },
+  {
+    path: 'talleres',
+    data: { seo: seo['talleres'] },
+    loadComponent: () =>
+      import('./pages/talleres/talleres.component').then(m => m.TalleresComponent),
   },
   {
     path: 'escritura',

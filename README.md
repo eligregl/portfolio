@@ -39,6 +39,7 @@ npm run build      # genera dist/eligreg-portfolio/browser
 | `/`                | Portada         |
 | `/sobre-mi`        | Sobre mí        |
 | `/trabajo`         | Portafolio      |
+| `/talleres`        | Talleres e inscripción |
 | `/escritura`       | Lista de posts  |
 | `/escritura/:slug` | Post individual |
 
@@ -91,6 +92,16 @@ Van en `public/images/` y se referencian como `images/archivo.jpg`. Redimensiona
 - `src/app/services/blog.service.server.ts`: durante el build lee los posts desde `public/posts` en disco.
 - `src/app/services/seo.service.ts`: escribe título, descripción, URL canónica y etiquetas Open Graph.
 - Los textos de SEO de las páginas fijas están en `src/app/app.routes.ts`. Los de cada post salen de `posts.json` (`title` y `summary`).
+
+## Talleres y pagos con Wompi
+
+Los talleres viven en `src/app/pages/talleres/talleres.data.ts`. Para cobrar un taller:
+
+1. En el dashboard de Wompi crea un link de pago con el monto.
+2. Pega la URL (`https://checkout.wompi.co/l/...`) en `enlacePago` y el monto en `precioCop`.
+3. Commit y push. Vercel despliega.
+
+Sin `enlacePago`, el botón abre un correo de reserva. El sitio no guarda llaves ni secretos de Wompi.
 
 ## Analítica
 

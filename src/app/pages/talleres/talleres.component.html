@@ -1,0 +1,63 @@
+<main class="work-flow">
+  <div class="work-container">
+
+    <header class="work-header">
+      <span class="work-label">// LECTURA · ESCRITURA · COMUNICACIÓN · PENSAMIENTO</span>
+      <h1 class="work-title">TALLERES</h1>
+    </header>
+
+    <p class="work-opening">
+      Dicto talleres de lectura, escritura, comunicación y pensamiento. Trabajo con textos
+      reales y, a veces, con poesía: un poema de Vallejo enseña más sobre ambigüedad que
+      cualquier prompt.
+    </p>
+
+    <section class="project-section">
+      <h2 class="section-divider">TALLERES</h2>
+
+      <div class="taller-list">
+        @for (t of talleres; track t.id; let i = $index) {
+          <article class="taller-row" [id]="t.id">
+            <span class="taller-num">{{ (i + 1).toString().padStart(2, '0') }}</span>
+
+            <div class="taller-body">
+              <h3 class="taller-title">{{ t.titulo }}</h3>
+              <p class="taller-desc">{{ t.descripcion }}</p>
+
+              <div class="project-meta">
+                <span class="meta-row"><span class="meta-key">PARA</span> {{ t.publico }}</span>
+                @if (t.formato) {
+                  <span class="meta-row"><span class="meta-key">FORMATO</span> {{ t.formato }}</span>
+                }
+                @if (t.fecha) {
+                  <span class="meta-row"><span class="meta-key">FECHA</span> {{ t.fecha }}</span>
+                }
+                @if (precio(t)) {
+                  <span class="meta-row"><span class="meta-key">PRECIO</span> {{ precio(t) }}</span>
+                }
+              </div>
+
+              <div class="taller-actions">
+                @if (enlacePago(t); as pago) {
+                  <a class="taller-button" [href]="pago" target="_blank" rel="noopener">Reservar y pagar</a>
+                  <span class="taller-nota">Pago seguro con Wompi</span>
+                } @else {
+                  <a class="taller-button" [href]="correoReserva(t)">
+                    {{ t.gratis ? 'Inscribirme' : 'Reservar mi cupo' }}
+                  </a>
+                  <span class="taller-nota">Te respondo por correo</span>
+                }
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+
+    <div class="work-cta">
+      <span class="cta-label">¿UN TALLER PARA TU EQUIPO?</span>
+      <a [href]="correoTaller" class="cta-button">Escríbeme</a>
+    </div>
+
+  </div>
+</main>
