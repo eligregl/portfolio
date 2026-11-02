@@ -23,6 +23,8 @@ export interface Taller {
   formato?: string;
   /** Precio en pesos colombianos. Sin puntos: 120000. */
   precioCop?: number;
+  /** Precio en texto libre, para otra moneda. Tiene prioridad sobre `precioCop`. */
+  precio?: string;
   /** El taller no cuesta. El botón abre un correo de inscripción. */
   gratis?: boolean;
   /** URL del link de pago de Wompi. */
@@ -30,6 +32,19 @@ export interface Taller {
 }
 
 export const TALLERES: Taller[] = [
+  {
+    id: 'lectores-con-criterio',
+    titulo: 'Club de lectura: Lectores con criterio',
+    publico: 'Cualquier persona que quiera leer en compañía, sepa o no de tecnología',
+    descripcion:
+      'Un club mensual de libros que piensan la tecnología, el poder y la vida ' +
+      'contemporánea, con ficción y ensayo por turnos. Antes de cada sesión recibes una guía ' +
+      'de lectura con cinco preguntas, y entre sesiones la conversación sigue en un grupo de WhatsApp.',
+    formato: 'Una sesión mensual de 75 minutos, por Google Meet, el último miércoles del mes',
+    fecha: 'Miércoles 25 de noviembre. Libro: La sociedad del cansancio, de Byung-Chul Han',
+    precio: '5 USD por puesto',
+    enlacePago: 'https://checkout.wompi.co/l/VPOS_aWIBf0',
+  },
   {
     id: 'ia-sin-perder-el-criterio',
     titulo: 'Cómo usar la IA sin perder el criterio técnico',

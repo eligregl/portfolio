@@ -21,6 +21,7 @@ export class TalleresComponent {
 
   precio(t: Taller): string {
     if (t.gratis) return 'Gratis';
+    if (t.precio) return t.precio;
     if (t.precioCop == null) return '';
     const miles = String(t.precioCop).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     return `$${miles} COP`;

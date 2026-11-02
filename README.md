@@ -98,7 +98,7 @@ Van en `public/images/` y se referencian como `images/archivo.jpg`. Redimensiona
 Los talleres viven en `src/app/pages/talleres/talleres.data.ts`. Para cobrar un taller:
 
 1. En el dashboard de Wompi crea un link de pago con el monto.
-2. Pega la URL (`https://checkout.wompi.co/l/...`) en `enlacePago` y el monto en `precioCop`.
+2. Pega la URL (`https://checkout.wompi.co/l/...`) en `enlacePago` y el monto en `precioCop` (o en `precio`, como texto, si lo muestras en otra moneda).
 3. Commit y push. Vercel despliega.
 
 Sin `enlacePago`, el botón abre un correo de reserva. El sitio no guarda llaves ni secretos de Wompi.
