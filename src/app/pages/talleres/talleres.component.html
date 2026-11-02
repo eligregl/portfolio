@@ -47,7 +47,7 @@
                 } @else {
                   @if (enlaceFormulario(t); as form) {
                     <a class="taller-button" [href]="form" target="_blank" rel="noopener">Inscribirme</a>
-                    <span class="taller-nota">Gratis, con inscripción previa</span>
+                    <span class="taller-nota">{{ t.gratis ? 'Gratis, con inscripción previa' : 'Inscripción previa' }}</span>
                   } @else {
                     <a class="taller-button" [href]="correoReserva(t)">
                       {{ t.gratis ? 'Inscribirme' : 'Reservar mi cupo' }}
