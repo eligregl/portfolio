@@ -6,7 +6,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const SITIO = 'https://eligreg.com';
-const fijas = ['/', '/sobre-mi', '/trabajo', '/escritura'];
+const fijas = ['/', '/sobre-mi', '/trabajo', '/talleres', '/escritura'];
 
 const posts = JSON.parse(readFileSync('public/posts/posts.json', 'utf-8'));
 const rutasPosts = posts.map(p => `/escritura/${p.slug}`);

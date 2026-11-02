@@ -10,6 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       <a routerLink="/" routerLinkActive="nav-active" [routerLinkActiveOptions]="{ exact: true }">inicio</a>
       <a routerLink="/sobre-mi" routerLinkActive="nav-active">sobre mí</a>
       <a routerLink="/trabajo" routerLinkActive="nav-active">trabajo</a>
+      <a routerLink="/talleres" routerLinkActive="nav-active">talleres</a>
       <a routerLink="/escritura" routerLinkActive="nav-active">escritura</a>
     </nav>
   `,
@@ -52,7 +53,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         transform: none;
         width: 100%;
         justify-content: center;
-        gap: var(--space-sm);
+        flex-wrap: wrap;
+        gap: var(--space-xs) var(--space-sm);
+      }
+
+      .magazine-nav-minimal a {
+        white-space: nowrap;
       }
     }
   `]

@@ -1,0 +1,231 @@
+.work-flow {
+  background: var(--color-bg);
+  padding: 8rem 0 5rem;
+  min-height: 100vh;
+}
+
+.work-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* ---- Header (igual que trabajo y sobre-mi) ---- */
+.work-header {
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
+.work-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.work-title {
+  font-family: var(--font-sans);
+  font-size: clamp(3.4rem, 8vw, 6rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 var(--color-secondary);
+  margin: 0;
+}
+
+.work-opening {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--color-primary);
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.5rem;
+  margin: 0 0 3.5rem 0;
+}
+
+.project-section {
+  margin-bottom: 3.5rem;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-divider::before { flex: 0 0 0; }
+
+/* ---- Talleres: filas editoriales, sin cajas ---- */
+.taller-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.taller-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 2rem;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: 6rem;
+}
+
+.taller-row:nth-child(2) { margin-left: 3rem; }
+.taller-row:nth-child(3) { margin-left: 6rem; }
+.taller-row:nth-child(4) { margin-left: 3rem; }
+
+.taller-num {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  line-height: 1;
+}
+
+.taller-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 900;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin: 0 0 0.9rem;
+}
+
+.taller-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0 0 1.2rem;
+  max-width: 58ch;
+}
+
+/* ---- Meta (igual que trabajo) ---- */
+.project-meta {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 58ch;
+}
+
+.meta-row {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+.meta-key {
+  color: var(--color-primary);
+  margin-right: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+/* ---- Botón de reserva ---- */
+.taller-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.taller-button,
+.cta-button {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.7rem 2rem;
+  background: var(--color-primary);
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  border-bottom: none;
+  transition: var(--transition);
+}
+
+.taller-button:hover,
+.cta-button:hover {
+  background: var(--color-secondary);
+  color: #fff;
+  border-bottom: none;
+}
+
+.taller-button:focus-visible,
+.cta-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.taller-button--ghost {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-text);
+}
+
+.taller-button--ghost:hover {
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.taller-nota {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---- CTA final ---- */
+.work-cta {
+  border: 1px solid var(--color-border);
+  padding: 2.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cta-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .work-container { padding: 0 1.5rem; }
+  .work-title { font-size: clamp(2.6rem, 12vw, 4rem); }
+  .taller-row { grid-template-columns: 1fr; gap: 0.8rem; }
+  .taller-row:nth-child(n) { margin-left: 0; }
+}
+
+@media (max-width: 500px) {
+  .work-container { padding: 0 1.2rem; }
+  .work-cta { padding: 2rem 1.5rem; }
+  .taller-button { display: block; width: 100%; text-align: center; }
+}
