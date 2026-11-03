@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { marked } from 'marked';
@@ -8,11 +8,11 @@ import { Post } from '../../models/post.model';
 import { formatearFecha } from '../../utils/fecha';
 
 @Component({
-  selector: 'app-post',
-  standalone: true,
-  imports: [RouterLink],
-  templateUrl: './post.component.html',
-  styleUrl: './post.component.css'
+    selector: 'app-post',
+    imports: [RouterLink],
+    templateUrl: './post.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './post.component.css'
 })
 export class PostComponent implements OnInit {
   private route = inject(ActivatedRoute);

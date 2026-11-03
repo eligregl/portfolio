@@ -1,14 +1,14 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { Post } from '../../models/post.model';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [RouterLink],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [RouterLink],
+    templateUrl: './home.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
   private blogService = inject(BlogService);

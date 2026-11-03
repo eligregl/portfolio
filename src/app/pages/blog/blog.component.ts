@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { Post } from '../../models/post.model';
@@ -7,11 +7,11 @@ import { formatearFecha } from '../../utils/fecha';
 const PAGE_SIZE = 6;
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [RouterLink],
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css'
+    selector: 'app-blog',
+    imports: [RouterLink],
+    templateUrl: './blog.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './blog.component.css'
 })
 export class BlogComponent implements OnInit {
   private blogService = inject(BlogService);

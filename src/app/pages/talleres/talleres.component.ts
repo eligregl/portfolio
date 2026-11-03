@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { TALLERES, Taller } from './talleres.data';
 
 const CORREO = 'eligregl@gmail.com';
@@ -8,6 +8,7 @@ const PREFIJO_WOMPI = 'https://checkout.wompi.co/';
   selector: 'app-talleres',
   standalone: true,
   templateUrl: './talleres.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './talleres.component.css'
 })
 export class TalleresComponent {

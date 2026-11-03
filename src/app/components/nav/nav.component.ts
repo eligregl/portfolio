@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-nav',
-  standalone: true,
-  imports: [RouterLink, RouterLinkActive],
-  template: `
+    selector: 'app-nav',
+    imports: [RouterLink, RouterLinkActive],
+    template: `
     <nav class="magazine-nav-minimal">
       <a routerLink="/" routerLinkActive="nav-active" [routerLinkActiveOptions]="{ exact: true }">inicio</a>
       <a routerLink="/sobre-mi" routerLinkActive="nav-active">sobre mí</a>
@@ -14,7 +13,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       <a routerLink="/escritura" routerLinkActive="nav-active">escritura</a>
     </nav>
   `,
-  styles: [`
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styles: [`
     .magazine-nav-minimal {
       position: fixed;
       top: var(--space-sm);

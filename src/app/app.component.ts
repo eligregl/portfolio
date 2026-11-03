@@ -1,4 +1,4 @@
-import { Component, PLATFORM_ID, inject } from '@angular/core';
+import { Component, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { NavComponent } from './components/nav/nav.component';
@@ -9,15 +9,15 @@ import { filter } from 'rxjs/operators';
 declare const gtag: Function;
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, NavComponent, FooterComponent],
-  template: `
+    selector: 'app-root',
+    imports: [RouterOutlet, NavComponent, FooterComponent],
+    template: `
     <app-nav />
     <router-outlet />
     <app-footer />
   `,
-  styles: []
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styles: []
 })
 export class AppComponent {
   constructor() {
