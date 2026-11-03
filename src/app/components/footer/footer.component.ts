@@ -10,11 +10,17 @@ import { Component } from '@angular/core';
         <a href="https://www.linkedin.com/in/eligreglopez/" target="_blank" rel="noopener">
           <span>→</span> LinkedIn
         </a>
+        <a href="https://eligreg.substack.com/" target="_blank" rel="noopener">
+          <span>→</span> Substack
+        </a>
         <a href="https://github.com/eligregl" target="_blank" rel="noopener">
           <span>→</span> GitHub
         </a>
         <a href="https://twitter.com/Eligregl" target="_blank" rel="noopener">
           <span>→</span> Twitter
+        </a>
+        <a href="https://www.instagram.com/eligregl/" target="_blank" rel="noopener">
+          <span>→</span> Instagram
         </a>
       </div>
     </footer>
